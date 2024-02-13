@@ -3,6 +3,7 @@ import "./globals.css";
 import { SessionProvider, SessionProviderProps } from "next-auth/react";
 import StyledComponentsRegistry from "./lib/registry";
 import { Session } from "next-auth";
+import { Navbar } from "@/components/layout/navbar";
 
 export default function RootLayout({
 	children,
@@ -15,7 +16,10 @@ export default function RootLayout({
 		<SessionProvider session={session}>
 			<html lang="en">
 				<body>
-					<StyledComponentsRegistry>{children}</StyledComponentsRegistry>
+					<StyledComponentsRegistry>
+						<Navbar />
+						{children}
+					</StyledComponentsRegistry>
 				</body>
 			</html>
 		</SessionProvider>
