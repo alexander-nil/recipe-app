@@ -1,7 +1,6 @@
 "use client";
 import "./globals.css";
-import { SessionProvider, SessionProviderProps } from "next-auth/react";
-import StyledComponentsRegistry from "./lib/registry";
+import { SessionProvider } from "next-auth/react";
 import { Session } from "next-auth";
 import { Navbar } from "@/components/layout/navbar";
 
@@ -16,10 +15,8 @@ export default function RootLayout({
 		<SessionProvider session={session}>
 			<html lang="en">
 				<body>
-					<StyledComponentsRegistry>
-						<Navbar />
-						{children}
-					</StyledComponentsRegistry>
+					<Navbar />
+					{children}
 				</body>
 			</html>
 		</SessionProvider>
